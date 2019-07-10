@@ -30,7 +30,13 @@ public class PlayerController : MonoBehaviour {
         Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
 
         rb.AddForce (movement * speed);
+         {
+            if (Input.GetKey("escape"))
+     Application.Quit();
+
+        }
     }
+    
 
     void OnTriggerEnter(Collider other) 
     {
@@ -55,11 +61,6 @@ public class PlayerController : MonoBehaviour {
         if (count >= 24)
         {
             winText.text = "You Win!";
-        }
-        {
-            if (Input.GetKey("escape"))
-     Application.Quit();
-
         }
         {
             if (count == 12) //*note that this number should be equal to the number of yellow pickups on the first playfield
