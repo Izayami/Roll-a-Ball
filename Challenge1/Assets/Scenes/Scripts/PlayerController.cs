@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour {
 
     private Rigidbody rb;
     private int count;
+    private int score;
 
     void Start ()
     {
@@ -35,7 +36,14 @@ public class PlayerController : MonoBehaviour {
         {
             other.gameObject.SetActive (false);
             count = count + 1;
+            score = score +1;
             SetCountText ();
+        }
+        else{
+            other.gameObject.CompareTag("Enemy");
+            other.gameObject.SetActive(false);
+            score = score -1;
+            SetCountText();
         }
     }
 
