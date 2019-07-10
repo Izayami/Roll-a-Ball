@@ -1,7 +1,7 @@
 ﻿  using UnityEngine;
  using System.Collections;
 
- public class Example3 : MonoBehaviour {
+ public class ObstacleMove : MonoBehaviour {
      private Vector3 pos1 = new Vector3(16,1,5);
      private Vector3 pos2 = new Vector3(31,1,5);
      public float speed = 1.0f;
