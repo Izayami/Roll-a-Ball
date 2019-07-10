@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour {
     public float speed;
     public Text countText;
     public Text winText;
+    public Text scoreText;
 
     private Rigidbody rb;
     private int count;
@@ -16,6 +17,7 @@ public class PlayerController : MonoBehaviour {
     {
         rb = GetComponent<Rigidbody>();
         count = 0;
+        score = 0;
         SetCountText ();
         winText.text = "";
     }
@@ -50,7 +52,7 @@ public class PlayerController : MonoBehaviour {
     void SetCountText ()
     {
         countText.text = "Count: " + count.ToString ();
-        if (count >= 12)
+        if (count >= 24)
         {
             winText.text = "You Win!";
         }
@@ -58,6 +60,12 @@ public class PlayerController : MonoBehaviour {
             if (Input.GetKey("escape"))
      Application.Quit();
 
+        }
+        {
+            if (count == 12) //*note that this number should be equal to the number of yellow pickups on the first playfield
+{
+    transform.position = new Vector3(25.0f, transform.position.y,0.16f); 
+}
         }
     }
 }
